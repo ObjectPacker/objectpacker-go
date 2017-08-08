@@ -23,6 +23,8 @@ func (p *pointer) Set(val interface{}) {
 		po.addr.SetInt(int64(vv))
 	case float64:
 		po.addr.SetFloat(vv)
+	case bool:
+		po.addr.SetBool(vv)
 	case []interface{}:
 
 	default:
