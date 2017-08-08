@@ -12,6 +12,27 @@ http://vinkdong.com/objectpacker
 go get github.com/ObjectPacker/objectpacker-go
 ```
 
+```go
+type X struct {
+	A float64
+	B float64
+	C interface{}
+	D float64
+}
+
+func main() {
+
+	p := X{A:20}
+
+	b := []byte(`
+{"A":99}
+	`)
+	pack.Packer(&b, &p)
+	fmt.Println(p.A)
+}
+
+```
+
 
 ## License
 
