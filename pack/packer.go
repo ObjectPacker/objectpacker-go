@@ -20,7 +20,12 @@ func (p *pointer) Set(val interface{}) {
 	case int:
 		po.addr.SetInt(int64(vv))
 	case float64:
-		po.addr.SetFloat(vv)
+		switch po.addr.Kind() {
+		default:
+			po.addr.SetFloat(vv)
+		case reflect.Int64,reflect.Int32,reflect.Int16,reflect.Int8,reflect.Int:
+			po.addr.SetInt(int64(vv))
+		}
 	case bool:
 		po.addr.SetBool(vv)
 	case []interface{}:
