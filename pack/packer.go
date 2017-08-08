@@ -1,7 +1,6 @@
 package pack
 
 import (
-	//"fmt"
 	"reflect"
 	"fmt"
 	"encoding/json"
@@ -17,7 +16,6 @@ func (p *pointer) Set(val interface{}) {
 	po := *p
 	switch vv := val.(type) {
 	case string:
-		fmt.Println("is string", vv)
 		po.addr.SetString(vv)
 	case int:
 		po.addr.SetInt(int64(vv))
