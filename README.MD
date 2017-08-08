@@ -9,7 +9,7 @@ http://vinkdong.com/objectpacker
 ## Quick Start 
 
 ```bash
-go get github.com/ObjectPacker/objectpacker-go
+go get github.com/ObjectPacker/objectpacker-go/pack
 ```
 
 ```go
